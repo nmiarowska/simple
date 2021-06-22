@@ -1,0 +1,332 @@
+:root{
+    --ratio_1920: calc(1920/1900);
+    --ratio_1366: calc(1366/1900);
+    --primary: #023a5c;
+    --secondary: #7a9aa9;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("./fonts/roboto-light-webfont.woff2");
+} 
+
+@media only screen and (width: 1366px){
+    .wrapper{
+        max-width: calc(1000px*var(--ratio_1366));
+    }
+
+    nav{
+        width: calc((1000px - 262px)*var(--ratio_1366));
+    }
+
+    #navbar-logo{
+        width: calc(262px*var(--ratio_1366));
+    }
+
+    .menu, #sidebar-menu-title{
+        font-size: 15px;
+    }
+
+    #navbar-search{
+        margin-right: calc(22px*var(--ratio_1366));
+    }
+
+    #navbar-search-input{
+        width: calc(177px*var(--ratio_1366));
+    }
+
+    .sidebar-wrapper{
+        padding-left: calc(49px*var(--ratio_1366));
+        width: calc(163px*var(--ratio_1366));
+    }
+
+    .sidebar-menu-links-div{
+        width: calc(104px*var(--ratio_1366));
+    }
+
+    #sidebar-menu-tool{
+        left: calc(182px*var(--ratio_1366));
+        width: calc(15px*var(--ratio_1366));
+    }
+
+    #main-container-title > p{
+        padding-left: calc(20px*var(--ratio_1366));
+        font-size: 20px;
+    }
+
+    #main-container-title > img{
+        width: calc(82px*var(--ratio_1366));
+    }
+    
+    #main-container-content{
+        font-size: 12px;
+    }
+
+    #main-container-content > section{
+        column-gap: calc(38px*var(--ratio_1366));
+        height: calc(975px*var(--ratio_1366))
+    }
+
+    #main-container-content > section > img{
+        width: calc(481px*var(--ratio_1366));
+    }
+}
+
+@media only screen and (width: 1920px){
+    .wrapper{
+        max-width: calc(1000px*var(--ratio_1920));
+    }
+
+    nav{
+        width: calc((1000px - 262px)*var(--ratio_1920));
+    }
+
+    #navbar-logo{
+        width: calc(262px*var(--ratio_1920));
+    }
+
+    .menu, #sidebar-menu-title, #main-container-content{
+        font-size: 20px;
+    }
+
+    #navbar-search{
+        margin-right: calc(22px*var(--ratio_1920));
+    }
+
+    #navbar-search-input{
+        width: calc(177px*var(--ratio_1920));
+    }
+
+    .sidebar-wrapper{
+        padding-left: calc(49px*var(--ratio_1920));
+        width: calc(163px*var(--ratio_1920));
+    }
+
+    .sidebar-menu-links-div{
+        width: calc(104px*var(--ratio_1920));
+    }
+
+    #sidebar-menu-tool{
+        left: calc(182px*var(--ratio_1920));
+        width: calc(15px*var(--ratio_1920));
+    }
+
+    #main-container-title > p{
+        margin-left: calc(20px*var(--ratio_1920));
+        font-size: 25px;
+    }
+
+    #main-container-title > img{
+        width: calc(82px*var(--ratio_1920));
+    }
+
+    #main-container-content{
+        font-size: 17px;
+    }
+
+    #main-container-content > section{
+        column-gap: calc(38px*var(--ratio_1920));
+        height: calc(985px*var(--ratio_1920))
+    }
+
+    #main-container-content > section > img{
+        width: calc(481px*var(--ratio_1920));
+    }
+}
+
+html{
+    font-family: "Roboto";
+
+}
+
+body{
+    margin: 0;
+}
+
+header{
+    background-color: var(--primary);
+    height: 88px;
+    
+}
+
+.wrapper{
+    margin: 0 auto;
+}
+
+#navbar-logo{
+    float: left;
+    height: auto;
+}
+
+nav{
+    float: left;
+}
+
+.navbar{
+    padding-top: 37px;
+    height: 32px;
+    vertical-align: middle;
+}
+
+.menu{
+    list-style: none;
+    text-decoration: none;
+    margin-top: 0px;
+}
+
+nav > ul{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2px;
+}
+
+nav > .menu > li:nth-child(n){
+    display: inline-block;
+}
+
+.menu > li:nth-child(n) > a{
+    color: white;
+    text-decoration: none;
+}
+
+#navbar-search{
+    float: right;
+}
+
+#navbar-search-input{
+    display: flex;
+    float: left;
+    height: 31px;
+    margin-right: 10px;
+    color: white;
+    padding-left: 10px;
+    background-color: var(--secondary);
+    display: none;
+}
+
+#navbar-search-input, #navbar-search-input:focus-visible{
+    border: none;
+    outline: none;
+}
+
+#navbar-search-btn{
+    width: 31px;
+    height: 32px;
+    background-image: url("images/navbar-search-img.png");
+    background-color: transparent;
+    border: none;
+    float: left;
+    cursor: pointer;
+}
+
+.sidebar-wrapper{
+    position: fixed;
+}
+
+#sidebar-menu-bg{
+    position: fixed;
+    box-shadow: 0 0 0.7em rgb(185, 185, 185);
+    height: 100%;
+    z-index: -1;
+}
+
+#sidebar-menu{
+    height: 100%;
+}
+
+#sidebar-menu-content{
+    position: absolute;
+    top: calc(50% - 88px); 
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#sidebar-menu-content, #sidebar-menu-tool{
+    float: left;
+}
+
+#sidebar-menu-content > div:nth-child(n) > ul{
+    padding-left: 0px;
+}
+
+#sidebar-menu-title{
+    color: var(--primary);
+}
+
+.sidebar-menu-links-div > .menu{
+    padding: 20px 0px 20px 0px;
+    border-top: 2px dotted var(--secondary);
+    margin-bottom: 0px;
+}
+
+.sidebar-menu-links-div > .menu > li:nth-child(n) > a{
+    color: var(--primary);
+    padding-left: 0px;
+    line-height: 1.5;
+}
+
+
+#sidebar-menu-tool{
+    height: 19px;
+    background-image: url("images/sidebar-menu-arrow-in.png");
+    background-repeat: no-repeat;
+    cursor: pointer;
+    position: absolute;
+    margin: 0;
+    top: calc(50%);
+    transform: translateY(calc(-50% - 88px));
+}
+
+#main-container{
+    clear: both;
+}
+
+#main-container-title{
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 43px;
+}
+
+#main-container-title > p{
+    display: inline;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary);
+}
+
+#main-container-title > img{
+    height: auto;
+}
+
+#main-container-content-summary{
+    margin: 0px 0px 25px 0px;
+}
+
+#main-container-content{
+    padding-top: 55px;
+    border-top: 2px dotted var(--secondary);
+}
+
+#main-container-content > section{
+    column-count: 2;
+    text-align: justify;
+    column-fill: auto;
+    margin-bottom: 80px;
+}
+
+#main-container-content > section > img{
+    height: auto;
+}
+
+#main-container-content > section > p:nth-child(n){
+    margin-bottom: 0;
+}
+
+footer{
+    height: 68px;
+    background-color: var(--primary)
+}
